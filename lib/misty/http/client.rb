@@ -49,6 +49,8 @@ module Misty
         @setup = setup
         @options = setup(options)
         @uri = URI.parse(@setup.auth.get_endpoint(@options.service_names, @options.region_id, @options.interface))
+        # encoded_url = URI.encode(@cloud.auth.get_endpoint(@options.service_names, @options.region_id, @options.interface))
+        # @uri = URI.parse(encoded_url)
         @base_path = @options.base_path ? @options.base_path : @uri.path
         @base_path = @base_path.chomp("/")
         @http = net_http(@uri, @options[:ssl_verify_mode], @setup.log)
