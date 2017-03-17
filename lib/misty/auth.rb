@@ -33,6 +33,10 @@ module Misty
 
     def authenticate
       http = Net::HTTP.new(@uri.host, @uri.port)
+      if @uri.scheme == 'https'
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      end
       response = http.post(self.class.path, @credentials.to_json, Misty::HEADER_JSON)
       raise AuthenticationError, "Response code=#{response.code}, Msg=#{response.msg}" unless response.code =~ /200|201/
       response
