@@ -7,7 +7,7 @@ module Misty
 
     Options = Struct.new(:alarming, :baremetal, :block_storage, :clustering, :compute, :container, :data_processing,
       :database, :data_protection, :dns, :identity, :image, :messaging, :metering, :network, :object_storage,
-      :orchestration, :search, :shared_file_systems)
+      :orchestration, :search, :shared_file_systems, :resources)
 
     attr_reader :services
 

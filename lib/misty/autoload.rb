@@ -70,6 +70,10 @@ module Misty
     module Swift
       autoload :V1, "misty/openstack/swift/v1"
     end
+    
+    module Limes
+      autoload :V1, "misty/openstack/limes/v1"
+    end
 
     module Trove
       autoload :V1_0, "misty/openstack/trove/v1_0"

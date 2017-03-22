@@ -52,6 +52,7 @@ module Misty
   SERVICES << Service.new(:orchestration,       :heat,         ["v1"])
   SERVICES << Service.new(:search,              :searchlight,  ["v1"])
   SERVICES << Service.new(:shared_file_systems, :manila,       ["v2"])
+  SERVICES << Service.new(:resources,           :limes,        ["v1"])
   SERVICES.freeze
 
   def self.services
