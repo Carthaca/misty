@@ -127,6 +127,10 @@ module Misty
       @orchestration ||= build_service(:orchestration)
     end
 
+    def resources
+      @resources ||= build_service(:resources)
+    end
+
     def search
       @search ||= build_service(:search)
     end
